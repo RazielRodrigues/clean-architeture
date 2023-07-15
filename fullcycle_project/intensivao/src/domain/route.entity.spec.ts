@@ -8,6 +8,9 @@ describe("Route entity", () => {
             endPosition: { lat: 1, lng: 3 },
         }
         let route = new Route(routeProps);
+
+        expect(route.id).toBeDefined();
+
         expect(route.props).toStrictEqual({
             ...routeProps, points: []
         })
@@ -28,7 +31,7 @@ describe("Route entity", () => {
             ]
         })
     })
-    test("Update method", () => {
+    test("updateTile", () => {
         const routeProp: RouteProps = {
             title: 'nome rotinha',
             startPosition: { lat: 12, lng: 13 },
@@ -41,7 +44,7 @@ describe("Route entity", () => {
 
         expect(route.props.title).toStrictEqual("agora mudou")
     })
-    test("Update method", () => {
+    test("updatePosition", () => {
         const routeProp: RouteProps = {
             title: 'nome rotinha',
             startPosition: { lat: 12, lng: 13 },
@@ -58,7 +61,7 @@ describe("Route entity", () => {
         expect(route.props.startPosition).toStrictEqual({ lat: 20, lng: 212 })
         expect(route.props.endPosition).toStrictEqual({ lat: 20, lng: 212 })
     })
-    test("Update method", () => {
+    test("updatePoints", () => {
         const routeProp: RouteProps = {
             title: 'nome rotinha',
             startPosition: { lat: 12, lng: 13 },

@@ -12,5 +12,46 @@ entiti parte mais importante
     - nao tem problema o get ser publico
     - o set deve ser sempre privado, para nao ser anemica
     - as modificaç~/oes nas entidades sao feitas via comandp
+    - substantivos
+
+use cases
+    - são regras de negocio
+    - são regras mais poluidas
+    - a diferença principal é que a entidade não liga pra literalmente NADA
+    - elas coordenam as entidades mais puras
+    - determina como vão utilizar o sistema
+    - geralmente são verbos
+    - a camada que usa as entidades
+    - quando voce quer ver o que o software como clean arch funciona leia os casos de uso
+    - um controle remoto de tv, e os seus botões os botões sao os casos de uso
+    - retornar a entidade route no route é errado
+    - o armazenamento de dados fica dentro do caso de uso
+
+repository
+    - camada responsavel por armazenar os dados
+    - o respository ele só se relaciona com uma ENTIDADE
+    - se cria uma interface para poder fazer polimorfismo
+    - se voce cria uma interface voce consegue que qualquer
+    outra classe que implemente o uso da interface possa
+    ser passado para o caso de uso
+    - se usa assim para fazer inversão de dependecia
+    - nao se recebe a lib de armazenamento dentro do useCase
+    - repositorio so está ligando em salvar, em fazer operações de armazenamento
+
+pasta domain = PASTA QUE SEGURA AS REGRAS DE NEGOCIO DA APLICAÇÃO
+    - entidades
+    - repository e suas interfaces
+
+pasta application = PASTA QUE CONTÉM OS CASOS DE USO OU SEJA, AS REGRAS DE APPLICAÇÃO NAS ENTIDADES
+
+pasta infra = PASTA QUE CONTÉM AS CLASSES QUE UTILIZAM OS REPOSITORIOS OU SEJA AS CLASSES QUE SÃO A IMPLEMENTAÇÃO CONCRETA
+    - arquivos que usam as interfaces de repository
+    - arquivos que tem conexão com serviços externos
+    - cada repositorio que salva as coisas
+    - fica as classes mais sujas que tem coisas que não sao do dominio
+    - fica os frameworks
+    - A INFRA DEPENDE DO NUCLEO
+    - A FLECHA DO DIAGRAMA APONTA ISSO
+    - OLHA A FLECHA APONTANDO PARA A DIREITA!
 
 npx jest --init
