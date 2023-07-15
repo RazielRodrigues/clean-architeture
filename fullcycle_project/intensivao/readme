@@ -1,0 +1,16 @@
+typescript nao usa em prod
+
+entiti parte mais importante
+    - modula os dados
+    - modula as regras de negocio
+    - uma entidade NÃO deve conter sets publicos
+    - as regras de negocio de set dos dados devem
+    estar DENTRO da classe da entidade
+    - a primeira regra é o construtor
+    - não importa AONDE esses dados DESSA classe serão salvos
+    - ENTIDADE COM SET PUBLICO É ANEMICA
+    - nao tem problema o get ser publico
+    - o set deve ser sempre privado, para nao ser anemica
+    - as modificaç~/oes nas entidades sao feitas via comandp
+
+npx jest --init
