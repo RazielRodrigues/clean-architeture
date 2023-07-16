@@ -8,21 +8,21 @@ A imagem que aparece em todos os lugares é:
 
 ## Estrutura de diretorios de um projeto com  Clean Architecture 
 
-src/
-├── domain/           (Camada de Domínio)
-│   ├── entities/     (Entidades do Domínio)
-│   ├── repositories/ (Interfaces de Repositório)
-│   └── usecases/     (Casos de Uso)
-├── interfaces/       (Camada de Interface)
-│   ├── controllers/  (Controladores)
-│   ├── presenters/   (Apresentadores)
-│   ├── gateways/     (Interfaces de Gateway)
-│   ├── devices/      (Dispositivos)
-│   ├── uiweb/        (Interface de Usuário Web)
-│   └── external/     (Interfaces Externas)
-└── infrastructure/   (Camada de Infraestrutura)
-    ├── repositories/ (Implementações de Repositório)
-    └── gateways/     (Implementações de Gateway)
+    src/
+    ├── domain/           (Camada de Domínio)
+    │   ├── entities/     (Entidades do Domínio)
+    │   ├── repositories/ (Interfaces de Repositório)
+    │   └── usecases/     (Casos de Uso)
+    ├── interfaces/       (Camada de Interface)
+    │   ├── controllers/  (Controladores)
+    │   ├── presenters/   (Apresentadores)
+    │   ├── gateways/     (Interfaces de Gateway)
+    │   ├── devices/      (Dispositivos)
+    │   ├── uiweb/        (Interface de Usuário Web)
+    │   └── external/     (Interfaces Externas)
+    └── infrastructure/   (Camada de Infraestrutura)
+        ├── repositories/ (Implementações de Repositório)
+        └── gateways/     (Implementações de Gateway)
 
 - `domain/entities/`: Contém as entidades centrais do domínio, representando conceitos e objetos relevantes para a aplicação.
 - `domain/repositories/`: Define as interfaces para acesso e persistência de dados relacionados ao domínio.
