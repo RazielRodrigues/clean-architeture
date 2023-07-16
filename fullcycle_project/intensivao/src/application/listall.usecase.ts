@@ -4,23 +4,14 @@ import { RouteRepositoryInterface } from "../domain/route.repository";
 // ORGANIZA AS ENTIDADES
 // O PRIMEIRO CLIENTE DAS ENTIDADES
 // ELE É OBRIGADO A RETORNAR UMA SAIDA
-export class CreateRouteUseCase {
+export class ListAllRouteUseCase {
 
     constructor(private routeRepo: RouteRepositoryInterface) { }
 
-    async execute(input: CreateRouteInput): Promise<CreateRouteOutput> {
-        const route = new Route(input)
-        await this.routeRepo.insert(route);
-        return route.toJSON();
+    async execute(): Promise<CreateRouteOutput> {
+        const routes = await this.routeRepo.findAll();
+        return routes.map(r => r.toJSON());
     }
-}
-
-// DTO
-type CreateRouteInput = {
-    title: string;
-    startPosition: LatLng;
-    endPosition: LatLng;
-    points?: LatLng[];
 }
 
 //SOLID
@@ -30,4 +21,4 @@ type CreateRouteOutput = {
     startPosition: LatLng;
     endPosition: LatLng;
     points?: LatLng[];
-}
+}[]
