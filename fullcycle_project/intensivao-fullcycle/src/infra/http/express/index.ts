@@ -19,6 +19,7 @@ const routeRepo = new RouteInMemoryRepository();
 
 app.use(express.json())
 
+// Aqui poderia chamar um controller
 app.post('/routes', async (req: Request, res: Response) => {
     const createRouteUseCase = new CreateRouteUseCase(routeRepo);
     const output = await createRouteUseCase.execute(req.body)

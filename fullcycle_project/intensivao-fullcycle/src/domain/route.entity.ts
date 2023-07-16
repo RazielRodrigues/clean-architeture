@@ -86,13 +86,3 @@ export class Route {
     }
 
 }
-
-const rota = new Route({
-    title: 'aaa',
-    startPosition: { lat: 15, lng: 15 },
-    endPosition: { lat: 15, lng: 15 },
-    points: [
-        { lat: 15, lng: 15 },
-        { lat: 15, lng: 15 }
-    ],
-})

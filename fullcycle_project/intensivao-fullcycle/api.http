@@ -1,0 +1,11 @@
+POST http://localhost:3000/routes
+Content-Type: application/json
+
+{
+    "title": "nome rotinha",
+    "startPosition": { "lat": 12, "lng": 13 },
+    "endPosition": { "lat": 12, "lng": 458 }
+}
+
+GET http://localhost:3000/routes
+Content-Type: application/json
