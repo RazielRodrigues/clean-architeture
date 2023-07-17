@@ -1,4 +1,4 @@
-import MessageEntityRepositoryInterface from '../../domain/repositories/MessageEntityRepositoryInterface'
+import MessageEntityRepositoryInterface from '../../domain/repositories/MessageEntityRepositoryInterface.js'
 
 export default class MemoryMessageRepository extends MessageEntityRepositoryInterface {
 

@@ -1,1 +1,9 @@
-GET http://localhost:3002/message
+# GET http://localhost:3002/message
+
+POST http://localhost:3005/message
+Content-Type: application/json
+
+{
+    "message": "testando",
+    "aaa": 87488
+}

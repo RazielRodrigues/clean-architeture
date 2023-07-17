@@ -1,4 +1,4 @@
-import MemoryMessageRepository from '../../infra/repository/MemoryMessageRepository';
+import MemoryMessageRepository from '../../infra/repository/MemoryMessageRepository.js';
 
 
 export default class TextfilePresenter {

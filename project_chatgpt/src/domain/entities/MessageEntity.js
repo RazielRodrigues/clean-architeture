@@ -7,7 +7,7 @@ export default class MessageEntity {
     }
 
     #setMessage(message) {
-        if (!message.lenght) {
+        if (!message?.length) {
             throw new Error("Can not be empty!");
         }
 

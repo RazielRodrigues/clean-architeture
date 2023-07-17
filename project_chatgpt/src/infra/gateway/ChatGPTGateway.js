@@ -1,32 +1,25 @@
-import fetch from 'node-fetch';
-import InterfaceChatbotAPI from '../../interfaces/gateway/InterfaceChatbotAPI'
+import InterfaceChatbotAPI from '../../interfaces/gateway/InterfaceChatbotAPI.js'
+import { Configuration, OpenAIApi } from "openai";
 
 export default class ChatGPTGateway extends InterfaceChatbotAPI {
 
     async send(message) {
-
-        const apiKey = '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';
-        const url = 'https://api.openai.com/v1/engines/davinci-codex/completions';
-
-        const requestBody = {
-            prompt: message,
-            max_tokens: 50, // Define o número máximo de tokens na resposta
-            temperature: 0.7 // Controla a criatividade das respostas (0.0 a 1.0)
-        };
-
         try {
-            const resposta = await fetch(url, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'Authorization': `Bearer ${apiKey}`
-                },
-                body: JSON.stringify(requestBody)
-            });
 
-            const { choices } = await resposta.json();
-            const respostaChatbot = choices[0].text.trim();
-            return respostaChatbot;
+            const apiKey = '';
+            const configuration = new Configuration({
+                organization: "org-kmuiDJl3Eg3fZSvy88pni0WE",
+                apiKey: apiKey,
+            });
+            const openai = new OpenAIApi(configuration);
+
+            const completion = await openai.createChatCompletion({
+                model: "gpt-3.5-turbo",
+                messages: [{ "role": "system", "content": "You are a helpful assistant." }, { role: "user", content: "Hello world" }],
+            });
+            const answer = completion.data.choices[0].text.trim();
+
+            return answer;
         } catch (error) {
             console.error('Erro ao conectar com o Chatbot:', error);
             throw error;

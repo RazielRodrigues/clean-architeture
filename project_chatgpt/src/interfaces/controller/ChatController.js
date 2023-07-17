@@ -1,19 +1,19 @@
-import SendMessage from "../../application/useCase/SendMessage";
-import MessageEntityRepositoryInterface from '../../domain/repositories/MessageEntityRepositoryInterface';
-import InterfaceChatbotAPI from '../gateway/InterfaceChatbotAPI';
-import TextfilePresenter from '../presenter/TextFilePresenter';
+import SendMessage from "../../application/useCase/SendMessage.js";
+import MessageEntityRepositoryInterface from '../../domain/repositories/MessageEntityRepositoryInterface.js';
+import InterfaceChatbotAPI from '../gateway/InterfaceChatbotAPI.js';
+import TextfilePresenter from '../presenter/TextFilePresenter.js';
 
 export default class ChatController {
 
-    constructor(MessageEntityRepositoryInterface, InterfaceChatbotAPI) {
-        this.repository = MessageEntityRepositoryInterface;
-        this.interfaceChatbotAPI = InterfaceChatbotAPI;
+    constructor(messageEntityRepositoryInterface, interfaceChatbotAPI) {
+        this.repository = messageEntityRepositoryInterface;
+        this.interfaceChatbotAPI = interfaceChatbotAPI;
     }
 
-    sendMessage(message) {
+    async sendMessage(message) {
         try {
             const saveCase = new SendMessage(this.repository, this.interfaceChatbotAPI);
-            const output = saveCase.execute(message);
+            const output = await saveCase.execute(message);
             return output;
         } catch (error) {
             console.error(error)
