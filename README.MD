@@ -1,6 +1,6 @@
 # Clean Architecture
 
-Este repositório tem como objetivo entender como funciona a arquitetura limpa (clean architecture). Este conceito surgiu na minha carreira profissional e, por isso, preciso compreender como ele funciona para poder transmitir o conhecimento aos outros membros da equipe e entregar meus cartões com o máximo de sintonia ao projeto.
+Este repositório tem como objetivo entender como funciona a arquitetura limpa (clean architecture).
 
 A imagem que aparece em todos os lugares é:
 
